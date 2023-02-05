@@ -1,0 +1,67 @@
+:root {
+    --text: rgb(204, 204, 204);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background: linear-gradient(90deg, #1c1c1c, #272727);
+    font-size: 1.6rem;
+    font-family: 'Itim', cursive;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    max-width: 300px;
+}
+.home h1{
+    font-size: 5rem;
+    color: rgb(5, 255, 5);
+}
+.home p {
+    color: var(--text);
+    font-size: 2.5rem;
+}
+.home input {
+    color: var(--text);
+    background: #252525;
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 10px;
+    width: 90%;
+    text-align: center;
+}
+.home button {
+    border: none;
+    background-color: rgb(5, 255, 5);
+    padding: 10px;
+    color: black;
+    font-size: 2rem;
+    font-weight: bold;
+    width: 90%;
+    cursor: pointer;
+    transition: 0.4s;
+    border-radius: 10px;
+}
+.home button:hover{
+    opacity: 0.5;
+}
