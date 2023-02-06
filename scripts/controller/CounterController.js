@@ -3,13 +3,16 @@ class CounterController {
 
     #currentDate;
     #inputDateEl;
+    #buttonStartEl;
     #localeBr;
 
-    constructor(inputDateEl, startCouting) {
+    constructor(inputDateEl, buttonStartEl) {
         this.setInputDateEl = inputDateEl 
+        this.setButtonStartEl = buttonStartEl
         this.setLocale = "pt-BR"
 
         this.saveCurrentDate()
+        this.startButton()
     }
 
     formatTime(date) {
@@ -23,16 +26,29 @@ class CounterController {
     }
 
     saveCurrentDate() {
-        this.setLocalDate = this.formatTime(this.getCurrenteDate)
+        this.setTimeInPlace(this.formatTime(this.getCurrenteDate))
     }
 
-    
-
-    get getLocalDate() {
-        return this.getInputDataEl
+    startButton() {
+        this.getButtonStartEl.addEventListener('click', e => {
+            this.start()
+        })
     }
-    set setLocalDate(value) {
-        this.getInputDataEl.value = value;
+
+    start() {
+        let inputValue = this.getInputDateEl.value
+        let targetDate = new Date(inputValue).getTime() 
+        let dateNow = new Date();
+        let currentDate = new Date(dateNow.getTime() - dateNow.getTimezoneOffset() )
+
+        if(targetDate < currentDate) {
+            alert("oooo")
+            this.saveCurrentDate()
+        }
+    }
+
+    setTimeInPlace(value) {
+        this.getInputDateEl.value = value;
     }
 
     get getCurrenteDate() {
@@ -42,11 +58,18 @@ class CounterController {
         this.#currentDate = value
     }
 
-    get getInputDataEl() {
+    get getInputDateEl() {
         return this.#inputDateEl
     }
     set setInputDateEl(value) {
         this.#inputDateEl = value
+    }
+
+    get getButtonStartEl() {
+        return this.#buttonStartEl
+    }
+    set setButtonStartEl(value) {
+        this.#buttonStartEl = value
     }
 
     get getLocale() {
