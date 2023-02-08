@@ -1,5 +1,6 @@
 :root {
     --text: rgb(204, 204, 204);
+    --header: rgb(5, 255, 5);
 }
 
 * {
@@ -34,8 +35,8 @@ main {
     max-width: 300px;
 }
 .home h1{
-    font-size: 5rem;
-    color: rgb(5, 255, 5);
+    font-size: 7rem;
+    color: var(--header)
 }
 .home p {
     color: var(--text);
@@ -49,6 +50,7 @@ main {
     border-radius: 10px;
     width: 90%;
     text-align: center;
+    font-size: 1.6rem;
 }
 .home button {
     border: none;
@@ -64,4 +66,103 @@ main {
 }
 .home button:hover{
     opacity: 0.5;
+}
+
+.counter {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    transition: 3s;
+}
+.counter h2 {
+    font-size: 7rem;
+    color: var(--header);
+    text-align: center;
+}
+
+.timeLeft {
+    display: flex;
+    gap: 40px;
+    
+}
+.timeLeft > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timeLeft > div span:nth-child(1) {
+    color: white;   
+    font-size: 4rem;
+}
+.timeLeft > div span:nth-child(2) {
+    color: var(--header);  
+    font-size: 3rem; 
+}
+
+#buttonReset {
+    border: none;
+    background-color: rgb(5, 255, 5);
+    padding: 10px;
+    color: black;
+    font-size: 2rem;
+    font-weight: bold;
+    width: 90%;
+    cursor: pointer;
+    transition: 0.4s;
+    border-radius: 10px;
+}
+#buttonReset:hover {
+    opacity: 0.5;
+}
+
+
+
+@media (max-width: 75em) {
+    html {
+        font-size: 60%;
+    }
+}
+
+@media (max-width: 61.25em) {
+    html {
+        font-size: 58%;
+    }
+}
+
+@media (max-width: 28.75em) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 15em) {
+    html {
+        font-size: 43%;
+    }
+}
+@media (max-width: 11.125em) {
+    html {
+        font-size: 33%;
+    }
+}
+@media (max-width: 8.125em) {
+    html {
+        font-size: 20%;
+    }
+}
+
+@media (max-width: 21em) {
+    .home h1 {
+        font-size: 5rem;
+    }
+}
+
+@media (max-width: 490px) {
+
+    .timeLeft {
+        flex-direction: column;
+    }
+
 }
